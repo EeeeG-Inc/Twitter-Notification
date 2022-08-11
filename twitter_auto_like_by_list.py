@@ -5,11 +5,6 @@ from datetime import timedelta
 
 class TwitterAutoLikeByList:
 
-    def __init__(self) -> None:
-        tokyo_tz = datetime.timezone(datetime.timedelta(hours=9))
-        self.now = datetime.datetime.now(tokyo_tz) - timedelta(minutes=1)
-        self.one_hour_ago = self.now - timedelta(hours=1)
-
     def run(self):
         twitter = MyTwitter()
         # LIKE は 15 分以内で 50 回まで。それ以上実行すると 429 Too Many Requests がしばらく発生するので注意
