@@ -10,8 +10,8 @@ on:
   workflow_dispatch:
   # 3. crontab
   schedule:
-    # 30 分毎
-    - cron: "*/30 * * * *"
+    # 60 分毎
+    - cron: "00 * * * *"
 
 jobs:
   twitter_auto_like_by_query:
@@ -38,5 +38,6 @@ jobs:
           WEBHOOK_URL_DEFAULT: ${{ secrets.WEBHOOK_URL_DEFAULT }}
           WEBHOOK_URL_TWITTER_NOTIFICATION: ${{ secrets.WEBHOOK_URL_TWITTER_NOTIFICATION }}
           WEBHOOK_URL_TWITTER_NOTIFICATION_FOR_NOTION: ${{ secrets.WEBHOOK_URL_TWITTER_NOTIFICATION_FOR_NOTION }}
+          AUTO_LIKE_LIST_ID: ${{ secrets.AUTO_LIKE_LIST_ID }}
           IS_DEBUG: ${{ secrets.IS_DEBUG }}
         run: python twitter_auto_like_by_query.py
