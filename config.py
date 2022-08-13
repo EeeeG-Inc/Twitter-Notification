@@ -30,6 +30,7 @@ class Config():
         self.api = tweepy.API(auth)
 
         self.auto_like_list_id = os.getenv('AUTO_LIKE_LIST_ID')
+        self.my_author_id = os.getenv('MY_AUTHOR_ID')
 
         self.webhook_urls = {
             'default': os.getenv('WEBHOOK_URL_DEFAULT'),
