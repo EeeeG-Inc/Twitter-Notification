@@ -8,6 +8,10 @@ on:
   #     - main
   # 2. GitHub 上の手動実行
   workflow_dispatch:
+  # 3. crontab
+  schedule:
+    # 60 分毎
+    - cron: "00 * * * *"
 
 jobs:
   twitter_auto_like_by_query:
