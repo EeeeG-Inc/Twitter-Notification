@@ -18,11 +18,10 @@ class TwitterAutoLikeByQuery:
         # NOTE: https://developer.twitter.com/en/docs/twitter-api/rate-limits
         api_limit = 50
         api_limit_count = 0
-        max_results = random.choice([12, 11, 10])
         queries = ['#駆け出しエンジニアと繋がりたい', 'エンジニア']
 
         for query in queries:
-            tweets = twitter.search_recent_tweets(query, self.one_hour_ago, self.now, max_results)
+            tweets = twitter.search_recent_tweets(query, self.one_hour_ago, self.now, random.choice([12, 11, 10]))
             api_limit_count += len(tweets)
 
             if api_limit_count <= api_limit:
